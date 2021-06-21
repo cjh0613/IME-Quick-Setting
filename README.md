@@ -11,5 +11,9 @@
 adb shell pm grant com.licheedev.imeqs android.permission.WRITE_SECURE_SETTINGS
 ```
 ## 截图
-![快捷按钮](https://raw.githubusercontent.com/licheedev/IME-Quick-Setting/main/files/device-2021-06-21-152856.png)
-![切换界面](https://raw.githubusercontent.com/licheedev/IME-Quick-Setting/main/files/device-2021-06-21-152825.png)
+
+| ![快捷按钮](https://raw.githubusercontent.com/licheedev/IME-Quick-Setting/main/files/device-2021-06-21-152856.png)  | ![切换界面](https://raw.githubusercontent.com/licheedev/IME-Quick-Setting/main/files/device-2021-06-21-152825.png)  |
+| ---- | ---- |
+
+
+
