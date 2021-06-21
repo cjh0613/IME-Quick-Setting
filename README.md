@@ -5,8 +5,9 @@
 
 ## 使用方法
 1. 下载安装[apk](https://github.com/licheedev/IME-Quick-Setting/releases)
+### (可选)Android P(9)或之前版本
 2. 手机开启开发者选项，并adb连接到电脑
-3. （可选）Android P(9)或之前版本的话，执行下面的命令（获取权限，在任何界面切换输入法）
+3. 执行下面的命令（获取权限，在任何界面切换输入法）
 ```bash
 adb shell pm grant com.licheedev.imeqs android.permission.WRITE_SECURE_SETTINGS
 ```
