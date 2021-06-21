@@ -6,8 +6,10 @@
 ## 使用方法
 1. 下载安装apk
 2. 手机开启开发者选项，并adb连接到电脑
-3. （可选）Android 9或之前版本执行下面的命令（获取权限，在任何界面切换输入法）
+3. （可选）Android P(9)或之前版本的话，执行下面的命令（获取权限，在任何界面切换输入法）
 ```bash
 adb shell pm grant com.licheedev.imeqs android.permission.WRITE_SECURE_SETTINGS
 ```
-
+## 截图
+![快捷按钮](https://raw.githubusercontent.com/licheedev/IME-Quick-Setting/main/files/device-2021-06-21-152856.png)
+![切换界面](https://raw.githubusercontent.com/licheedev/IME-Quick-Setting/main/files/device-2021-06-21-152825.png)
