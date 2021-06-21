@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">输入法快速切换</string>
+    <string name="change_current_ime">切换当前输入法</string>
+    <string name="change_ime">切换输入法</string>
+</resources>
