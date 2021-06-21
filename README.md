@@ -4,7 +4,7 @@
 所以写了这个小工具，通过添加一个"Quick settings tile"到状态栏，实现快速切换输入法
 
 ## 使用方法
-1. 下载安装apk
+1. 下载安装[apk](https://github.com/licheedev/IME-Quick-Setting/releases)
 2. 手机开启开发者选项，并adb连接到电脑
 3. （可选）Android P(9)或之前版本的话，执行下面的命令（获取权限，在任何界面切换输入法）
 ```bash
