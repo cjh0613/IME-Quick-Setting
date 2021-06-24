@@ -1,6 +1,7 @@
 package com.licheedev.imequicksetting;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.inputmethod.InputMethodManager;
@@ -18,7 +19,14 @@ public class ChangeImeActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        mShown.set(false);
+    }
+
+    @Override
     public void onWindowFocusChanged(boolean hasFocus) {
+
         if (hasFocus) {
             if (mShown.get()) {
                 finish();

@@ -27,6 +27,7 @@
         <activity
             android:name=".ChangeImeActivity"
             android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
             android:theme="@style/ChangeImeTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
