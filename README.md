@@ -5,9 +5,10 @@
 
 ## 使用方法
 1. 下载安装[apk](https://github.com/licheedev/IME-Quick-Setting/releases)
-### (可选)Android P(9)或之前版本
-2. 手机开启开发者选项，并adb连接到电脑
-3. 执行下面的命令（获取权限，在任何界面切换输入法）
+2. 把“切换输入法”添加到下拉通知的快捷开关列表里
+### (可选，实现无需跳转页面即可切换输入法)Android 9(P)或之前版本
+3. 手机开启开发者选项，并adb连接到电脑
+4. 执行下面的命令（获取权限，在任何界面切换输入法）
 ```bash
 adb shell pm grant com.licheedev.imeqs android.permission.WRITE_SECURE_SETTINGS
 ```

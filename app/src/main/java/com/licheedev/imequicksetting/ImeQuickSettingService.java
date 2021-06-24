@@ -2,6 +2,7 @@ package com.licheedev.imequicksetting;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
@@ -14,6 +15,7 @@ public class ImeQuickSettingService extends TileService {
     @Override
     public void onTileAdded() {
         //LogPlus.d(TAG, "onTileAdded");
+        getQsTile().setState(Tile.STATE_INACTIVE);
     }
 
     @Override
@@ -34,14 +36,14 @@ public class ImeQuickSettingService extends TileService {
         Intent it = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
         sendBroadcast(it);
         // 弹出切换输入法对话框
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            Intent intent = new Intent(this, ChangeImeActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-        } else {
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.Q && checkPermission()) {
             // 需要 android.permission.WRITE_SECURE_SETTINGS 权限
             showInputMethodPicker();
+        } else {
+            Intent intent = new Intent(this, ChangeImeActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(intent);
         }
     }
 
@@ -51,9 +53,14 @@ public class ImeQuickSettingService extends TileService {
         imm.showInputMethodPicker();
     }
 
+    private boolean checkPermission() {
+        PackageManager pm = getPackageManager();
+        return pm.checkPermission("android.permission.WRITE_SECURE_SETTINGS", getPackageName())
+            == PackageManager.PERMISSION_GRANTED;
+    }
+
     @Override
     public void onStartListening() {
-        getQsTile().setState(Tile.STATE_INACTIVE);
         //LogPlus.d(TAG, "onStartListening");
     }
 

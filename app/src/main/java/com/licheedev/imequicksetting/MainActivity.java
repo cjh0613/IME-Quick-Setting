@@ -21,4 +21,9 @@ public class MainActivity extends AppCompatActivity {
             imm.showInputMethodPicker();
         });
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
 }
